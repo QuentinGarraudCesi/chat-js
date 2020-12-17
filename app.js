@@ -1,0 +1,106 @@
+
+//  Definir le pseudo  //
+let User = {
+    set_pseudo: function(value){
+        document.getElementById('display-pseudo').innerHTML = "Bonjour " + value + " !"
+    }
+}
+
+document.getElementById('button--submit-pseudo').addEventListener('click', function(){
+    User.set_pseudo(document.getElementById('input--pseudo').value)
+})
+//  Envoyer un message  //
+let Message = {
+    create_message: function(name){
+        let item = document.createElement('li');
+        let date = document.createElement('p');
+
+        // Contenu du message
+        item.textContent = name;
+        item.className = 'item-message'
+        document.getElementById('step-message-list').appendChild(item)
+        document.getElementById('input--message').value = ''
+
+        //  Remplacer les insultes par des caractères spéciaux de façon aléatoire //
+        if(name == 'merde' || name == 'Merde' || name == 'con' || name == 'Con' || name == 'salaud' || name == 'Salaud'){
+            var text = "";
+            var possible = "!§:/.,?&é'({[-|è`_ç^à@=}+*";
+
+        for (var i = 0; i < 5; i++)
+            item.textContent = text += possible.charAt(Math.floor(Math.random() * possible.length));;
+        } else {
+            item.textContent = name;
+        }
+
+        // Afficher l'heure du message
+        var chatGetDate = new Date();
+        var chatGetHour = chatGetDate.getHours();
+        var chatGetMinutes = chatGetDate.getMinutes();
+
+        date.textContent = "Envoyé à " + chatGetHour + ":" + chatGetMinutes,
+        date.className = 'message-hour'
+        item.appendChild(date)
+
+    }
+}
+document.getElementById('button--submit-message').addEventListener('click', function(){
+    Message.create_message(document.getElementById('input--message').value)
+})
+
+
+//  Permettre à l'utilisateur de changer la couleur et la taille de ses messages  //
+let Properties = {
+    change_color: function(color){
+        var message = document.getElementsByClassName('item-message');
+
+        for (var i = 0; i < message.length; i++) {
+            message[i].style.backgroundColor = color;
+        }
+
+    },
+    change_size: function(size){
+        var message = document.getElementsByClassName('item-message');
+
+        for (var i = 0; i < message.length; i++) {
+            message[i].style.fontSize = size + "px";
+        }
+    }
+}
+document.getElementById('button--change-color').addEventListener('click',function(){
+    Properties.change_color(document.getElementById('input--change-color').value)
+})
+document.getElementById('button--change-size').addEventListener('click',function(){
+    Properties.change_size(document.getElementById('input--change-size').value)
+})
+
+let Helpers = {
+    //  Pouvoir quitter le chat en se deconnectant sans quitter la page  //
+    connect: function(status){
+        var area = document.getElementById('chat-area')
+        area.classList.remove(status)
+        area.classList.add('connected')
+    },
+
+    deconnect: function(status){
+        var area = document.getElementById('chat-area')
+        area.classList.remove(status)
+        area.classList.add('disconnected')
+    }
+
+}
+document.getElementById('button--chat-connect').addEventListener('click', function(){
+    Helpers.connect('disconnected')
+})
+document.getElementById('button--chat-disconnect').addEventListener('click', function(){
+    Helpers.deconnect('connected')
+})
+
+
+//  Affichage de la date et de l'heure actuelles  //
+function displayDate(){
+    var tempsCourant = document.getElementById('display-date');
+    var d = new Date();
+    tempsCourant.innerHTML = 'Nous sommes le ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' et il est ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+}
+displayDate();
+setInterval(displayDate, 1000);

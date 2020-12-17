@@ -1,0 +1,141 @@
+// Variables
+$font-family: 'Poppins', sans-serif;
+$text-color: #000;
+$background-color: #FDFDFD;
+$p--font-size: 16px;
+$a--color: #027368;
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $background-color;
+    font-size: 16px;
+    font-family: $font-family;
+}
+p{
+    font-size: $p--font-size;
+    color: $text-color;
+}
+a{
+    text-decoration: none;
+    color: $a--color;
+}
+input, button{
+    border: 0;
+    border: 2px solid $text-color;
+    outline: 0;
+    padding: 7px 10px;
+    background: transparent;
+    margin-left: 5px;
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+}
+.disconnected{
+    display: none;
+}
+.connected{
+    display: block;
+}
+
+/*  Header  */
+header#header{
+    padding: 30px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+
+    .title{
+        h1{
+            font-size: 50px;
+            color: $text-color;
+        }
+    }
+}
+
+
+#step-pseudo, 
+h2#display-pseudo, 
+#step-apps-status{
+    text-align: center;
+}
+
+
+#step-apps-status{
+    margin-top: 50px;
+    #status{
+        border-radius: 20px;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/*  Chat Area  */
+section#chat-area{
+    margin: 30px 0 20px 0;
+
+    #step-send-message{
+        padding: 20px;
+
+        #step-message-list{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            height: 400px;
+            overflow-y: auto;
+
+            .item-message{
+                list-style: none;
+                padding: 10px 20px;
+                background: #097FF3;
+                color: white;
+                width: 150px;
+                border-radius: 20px 20px 0 20px;
+                margin: 10px 0;
+
+                &::first-letter{
+                    text-transform: uppercase;
+                }
+
+                .message-hour{
+                    font-size: 11px;
+                    color: white;
+                }
+            }
+            .first-message{
+                list-style: none;
+                padding: 10px 20px;
+                background: rgb(230, 230, 230);
+                color: $text-color;
+                border-radius: 20px 20px 20px 0;
+                width: 150px;
+                margin: 10px 0;
+            }
+        }
+    }
+    #step-submit-message{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    #step-change-property{
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+#step-current-date{
+    text-align: center;
+}
+/*  Footer  */
+footer#footer{
+    padding: 30px 0;
+    text-align: center;
+}

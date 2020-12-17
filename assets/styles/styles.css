@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FDFDFD;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #027368;
+}
+
+input, button {
+  border: 0;
+  border: 2px solid #000;
+  outline: 0;
+  padding: 7px 10px;
+  background: transparent;
+  margin-left: 5px;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.disconnected {
+  display: none;
+}
+
+.connected {
+  display: block;
+}
+
+/*  Header  */
+header#header {
+  padding: 30px 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header#header .title h1 {
+  font-size: 50px;
+  color: #000;
+}
+
+#step-pseudo,
+h2#display-pseudo,
+#step-apps-status {
+  text-align: center;
+}
+
+#step-apps-status {
+  margin-top: 50px;
+}
+
+#step-apps-status #status {
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+/*  Chat Area  */
+section#chat-area {
+  margin: 30px 0 20px 0;
+}
+
+section#chat-area #step-send-message {
+  padding: 20px;
+}
+
+section#chat-area #step-send-message #step-message-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 400px;
+  overflow-y: auto;
+}
+
+section#chat-area #step-send-message #step-message-list .item-message {
+  list-style: none;
+  padding: 10px 20px;
+  background: #097FF3;
+  color: white;
+  width: 150px;
+  border-radius: 20px 20px 0 20px;
+  margin: 10px 0;
+}
+
+section#chat-area #step-send-message #step-message-list .item-message::first-letter {
+  text-transform: uppercase;
+}
+
+section#chat-area #step-send-message #step-message-list .item-message .message-hour {
+  font-size: 11px;
+  color: white;
+}
+
+section#chat-area #step-send-message #step-message-list .first-message {
+  list-style: none;
+  padding: 10px 20px;
+  background: #e6e6e6;
+  color: #000;
+  border-radius: 20px 20px 20px 0;
+  width: 150px;
+  margin: 10px 0;
+}
+
+section#chat-area #step-submit-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+section#chat-area #step-change-property {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#step-current-date {
+  text-align: center;
+}
+
+/*  Footer  */
+footer#footer {
+  padding: 30px 0;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
