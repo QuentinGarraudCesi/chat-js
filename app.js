@@ -63,11 +63,7 @@ let Properties = {
     },
     change_size: function(size){
         var myMessage = document.getElementsByClassName('item-message');
-        var otherMessage = document.getElementsByClassName('first-message');
 
-        for (var i = 0; i < otherMessage.length; i++) {
-            otherMessage[i].style.fontSize = size;
-        }
         for (var i = 0; i < myMessage.length; i++) {
             myMessage[i].style.fontSize = size;
         }
