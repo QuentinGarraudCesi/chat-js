@@ -20,7 +20,7 @@ let Message = {
     create_message: function(name){
         let item = document.createElement('li');
         let date = document.createElement('p');
-        let insultes = RegExp(/(.+)(merde|enculé|fils de pute|connard|conard|batard|putin|pute|enfoiré|enfoire|connasse|salope|salaud|couilles|couille|bite|chier|con|conne|crevure|du con|garce|cul)(.+)/ig)
+       // let insultes = "merde|enculé|fils de pute|connard|conard|batard|putin|pute|enfoiré|enfoire|connasse|salope|salaud|couilles|couille|bite|chier|con|conne|crevure|du con|garce|cul"
 
         // Contenu du message
         item.textContent = name;
@@ -28,9 +28,15 @@ let Message = {
         document.getElementById('step-message-list').appendChild(item)
         document.getElementById('input--message').value = ''
 
+        item.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+        });
+
+
 
         //  Remplacer les insultes par des caractères spéciaux de façon aléatoire //
-        if(name = insultes){
+        if(name == "merde" | name == "enculé" | name == "fdp" | name == "connard" | name == "batard" | name == "pute" | name == "enfoiré" | name == "connasse" | name == "salope" | name == "con"){
             var text = "";
             var possible = "!§:/.,?&'({[-|`_ç^@=}+*";
 
@@ -50,6 +56,8 @@ let Message = {
         date.textContent = "Envoyé à " + chatGetHour + ":" + chatGetMinutes,
         date.className = 'message-hour'
         item.appendChild(date)
+
+        
     }
 }
 document.getElementById('button--submit-message').addEventListener('click', function(){
