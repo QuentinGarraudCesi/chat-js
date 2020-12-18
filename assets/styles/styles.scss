@@ -1,7 +1,7 @@
 // Variables
 $font-family: 'Poppins', sans-serif;
 $text-color: #000;
-$background-color: #FDFDFD;
+$background-color: #Ffff;
 $p--font-size: 16px;
 $a--color: #027368;
 
@@ -63,6 +63,7 @@ header#header{
 h2#display-pseudo, 
 #step-apps-status{
     text-align: center;
+    display: block;
 }
 
 

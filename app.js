@@ -6,17 +6,21 @@ let User = {
         
         document.getElementById('display-pseudo').innerHTML = "Bonjour " + value + " !"
         champ.style.backgroundColor = "transparent";
-    }
+
+
+        }
 }
 
-document.getElementById('button--submit-pseudo').addEventListener('click', function(){
+document.getElementById('button--submit-pseudo-connected').addEventListener('click', function(){
     User.set_pseudo(document.getElementById('input--pseudo').value)
 })
+
 //  Envoyer un message  //
 let Message = {
     create_message: function(name){
         let item = document.createElement('li');
         let date = document.createElement('p');
+        let insultes = RegExp(/(.+)(merde|enculé|fils de pute|connard|conard|batard|putin|pute|enfoiré|enfoire|connasse|salope|salaud|couilles|couille|bite|chier|con|conne|crevure|du con|garce|cul)(.+)/ig)
 
         // Contenu du message
         item.textContent = name;
@@ -24,13 +28,16 @@ let Message = {
         document.getElementById('step-message-list').appendChild(item)
         document.getElementById('input--message').value = ''
 
-        //  Remplacer les insultes par des caractères spéciaux de façon aléatoire //
-        if(name == 'merde' || name == 'Merde' || name == 'con' || name == 'Con' || name == 'salaud' || name == 'Salaud'){
-            var text = "";
-            var possible = "!§:/.,?&é'({[-|è`_ç^à@=}+*";
 
-        for (var i = 0; i < 5; i++)
-            item.textContent = text += possible.charAt(Math.floor(Math.random() * possible.length));;
+        //  Remplacer les insultes par des caractères spéciaux de façon aléatoire //
+        if(name = insultes){
+            var text = "";
+            var possible = "!§:/.,?&'({[-|`_ç^@=}+*";
+
+            for (var i = 0; i < 5; i++){
+                item.textContent = text += possible.charAt(Math.floor(Math.random() * possible.length));;
+            }
+
         } else {
             item.textContent = name;
         }
@@ -43,7 +50,6 @@ let Message = {
         date.textContent = "Envoyé à " + chatGetHour + ":" + chatGetMinutes,
         date.className = 'message-hour'
         item.appendChild(date)
-
     }
 }
 document.getElementById('button--submit-message').addEventListener('click', function(){
@@ -80,6 +86,7 @@ let Helpers = {
     //  Pouvoir quitter le chat en se deconnectant sans quitter la page  //
     connect: function(status){
         var area = document.getElementById('chat-area')
+
         area.classList.remove(status)
         area.classList.add('connected')
     },
@@ -91,7 +98,7 @@ let Helpers = {
     }
 
 }
-document.getElementById('button--chat-connect').addEventListener('click', function(){
+document.getElementById('button--submit-pseudo-connected').addEventListener('click', function(){
     Helpers.connect('disconnected')
 })
 document.getElementById('button--chat-disconnect').addEventListener('click', function(){
@@ -141,7 +148,7 @@ xhttp.onreadystatechange = function() {
   xhttp.send();
 
 
-  function verifierCaracteres(event) {
+function verifierCaracteres(event) {
 	 		
 	var keyCode = event.which ? event.which : event.keyCode;
 	var touche = String.fromCharCode(keyCode);

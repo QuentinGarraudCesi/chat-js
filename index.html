@@ -12,31 +12,28 @@
 </head>
 <body>
     <header id="header">
-        <!--  Demander le pseudo  -->
-        <div id="step-pseudo">
-            <input type="text" pattern="[A-Za-z]{3}" placeholder="Entre ton pseudo" id="input--pseudo" onkeypress="verifierCaracteres(event); return false;">
-            <button type="submit" id="button--submit-pseudo">Définir</button>
-        </div>
         <div class="title">
             <h2 id="display-pseudo">Bonjour !</h2>
             <h1>The ultimate chat</h1>
             <p>Parlez de vous à vous.</p>
         </div>
-        <!--  Affichage de la date et de l'heure actuelles  -->
-        <div id="step-current-date">
-            <p id="display-date"></p>
-        </div>
+
     </header>
 
     <div class="container">
+        <!--  Demander le pseudo  -->
+        <id id="step-pseudo">
+            <input type="text" pattern="[A-Za-z]{0,50}" placeholder="Entre ton pseudo" id="input--pseudo" onkeypress="verifierCaracteres(event); return false;">
+            <button type="submit" id="button--submit-pseudo-connected">Se connecter</button>
+        </id>
 
-        <!--  Pouvoir quitter le chat en se deconnectant sans quitter la page  -->
-        <section id="step-apps-status">
-            <button type="submit" id="button--chat-connect">Se connecter</button>
-            <button type="submit" id="button--chat-disconnect">Se deconnecter</button>
-        </section>
 
         <section id="chat-area" class="disconnected">
+
+                    <!--  Pouvoir quitter le chat en se deconnectant sans quitter la page  -->
+        <section id="step-apps-status">
+            <button type="submit" id="button--chat-disconnect">Se deconnecter</button>
+        </section>
             <!--  Liste des messages  -->
             <div id="step-send-message">
                 <ul id="step-message-list">
@@ -46,7 +43,7 @@
 
             <!--  Envoyer un message  -->
             <div id="step-submit-message">
-                <input type="text" name="Entrer votre message" id="input--message" placeholder="Entrer votre message ici">
+                <input type="text" id="input--message" placeholder="Entrer votre message ici">
                 <button type="submit" id="button--submit-message"><i class="fab fa-telegram-plane"></i></button>
             </div>
 
@@ -81,7 +78,10 @@
 
 
     <footer id="footer">
-
+        <!--  Affichage de la date et de l'heure actuelles  -->
+        <div id="step-current-date">
+            <p id="display-date"></p>
+        </div>
         <p>Create with love by <a href="https://garraud.fr/">grrd</a>.</p>
     </footer>
 
