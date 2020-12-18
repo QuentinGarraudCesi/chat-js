@@ -19,7 +19,7 @@ a {
   color: #027368;
 }
 
-input, button {
+input, button, select {
   border: 0;
   border: 2px solid #000;
   outline: 0;
@@ -122,8 +122,20 @@ section#chat-area #step-send-message #step-message-list .first-message {
   background: #e6e6e6;
   color: #000;
   border-radius: 20px 20px 20px 0;
-  width: 150px;
+  width: 200px;
   margin: 10px 0;
+}
+
+section#chat-area #step-send-message #step-message-list .first-message .message-hour {
+  padding-top: 5px;
+  font-size: 11px;
+  color: black;
+}
+
+section#chat-area #step-send-message #step-message-list .first-message .user-message {
+  font-size: 11px;
+  padding-bottom: 5px;
+  display: block;
 }
 
 section#chat-area #step-submit-message {

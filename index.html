@@ -14,7 +14,7 @@
     <header id="header">
         <!--  Demander le pseudo  -->
         <div id="step-pseudo">
-            <input type="text" pattern="[A-Za-z]{3}" placeholder="Entre ton pseudo" id="input--pseudo" >
+            <input type="text" pattern="[A-Za-z]{3}" placeholder="Entre ton pseudo" id="input--pseudo" onkeypress="verifierCaracteres(event); return false;">
             <button type="submit" id="button--submit-pseudo">Définir</button>
         </div>
         <div class="title">
@@ -46,15 +46,34 @@
 
             <!--  Envoyer un message  -->
             <div id="step-submit-message">
-                <input type="text" name="Entrer votre message" id="input--message">
+                <input type="text" name="Entrer votre message" id="input--message" placeholder="Entrer votre message ici">
                 <button type="submit" id="button--submit-message"><i class="fab fa-telegram-plane"></i></button>
             </div>
 
             <!--  Permettre à l'utilisateur de changer la couleur et la taille de ses messages  -->
             <div id="step-change-property" class="hidden">
-                <input type="text" id="input--change-color">
+                <input type="text" id="input--change-color" placeholder="Exemple : '#0000', 'black'">
                 <button type="button" id="button--change-color">Changer la couleur</button>
-                <input type="text" id="input--change-size">
+                <select id="select--change-size">
+                    <option value="11px">11 px</option>
+                    <option value="12px">12 px </option>
+                    <option value="13px">13 px</option>
+                    <option value="14px">14 px</option>
+                    <option value="15px">15 px</option>
+                    <option value="16px">16 px</option>
+                    <option value="17px">17 px</option>
+                    <option value="18px">18 px</option>
+                    <option value="19px">19 px</option>
+                    <option value="20px">20 px</option>
+                    <option value="21px">21 px</option>
+                    <option value="22px">22 px</option>
+                    <option value="23px">23 px</option>
+                    <option value="24px">24 px</option>
+                    <option value="25px">25 px</option>
+                    <option value="26px">26 px</option>
+                    <option value="27px">27 px</option>
+                    <option value="28px">28 px</option>
+                </select>
                 <button type="button" id="button--change-size">Changer la taille</button>
             </div>
         </section>
